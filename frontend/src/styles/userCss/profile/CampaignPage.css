@@ -1,0 +1,116 @@
+.campaign-page {
+  min-height: 100vh;
+  width: 100%;
+  padding: 80px 20px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  box-sizing: border-box;
+  background: linear-gradient(135deg, rgba(10,12,20,0.6), rgba(6,8,14,0.6));
+  color: var(--text-primary);
+}
+
+.campaign-page h2 {
+  font-size: 32px;
+  font-weight: 700;
+  text-align: center;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+}
+
+.campaign-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+
+.campaign-table th,
+.campaign-table td {
+  padding: 12px 10px;
+  text-align: center;
+  font-size: 15px;
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+  color: var(--text-primary);
+}
+
+.campaign-table th {
+  background-color: rgba(255, 255, 255, 0.05);
+  font-weight: 600;
+}
+
+.campaign-table tr:hover {
+  background-color: rgba(255,255,255,0.08);
+}
+
+.status-badge {
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+.status-running {
+  background-color: #facc15;
+  color: #000;
+}
+
+.status-completed {
+  background-color: #22c55e;
+}
+
+.status-failed {
+  background-color: #ef4444;
+}
+
+.btn {
+  margin: 0 2px;
+  padding: 4px 8px;
+  border: none;
+  cursor: pointer;
+  border-radius: var(--border-radius);
+  font-size: 0.875rem;
+  transition: all 0.25s ease;
+}
+
+.btn.view {
+  background-color: #3b82f6;
+}
+
+.btn.edit {
+  background-color: #fbbf24;
+}
+
+.btn.delete {
+  background-color: #ef4444;
+}
+
+@media (max-width: 768px) {
+  .campaign-page {
+    padding: 70px 16px 30px;
+  }
+  .campaign-table th,
+  .campaign-table td {
+    padding: 8px 6px;
+    font-size: 14px;
+  }
+  .btn {
+    font-size: 0.75rem;
+    padding: 3px 6px;
+  }
+}
+
+@media (max-width: 400px) {
+  .campaign-page {
+    padding: 60px 10px 25px;
+  }
+  .campaign-table th,
+  .campaign-table td {
+    padding: 6px 4px;
+    font-size: 13px;
+  }
+  .btn {
+    font-size: 0.7rem;
+    padding: 2px 4px;
+  }
+}

@@ -1,0 +1,32 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: linear-gradient(to bottom, #aaaaaa, #7c653f);
+  overflow-x: hidden;
+}
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  z-index: 50;
+}
+
+
+.page-content {
+  flex-grow: 1;
+  width: 100%;
+  padding: 0;
+  margin-top: 70px;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.page-content.blurred {
+  filter: brightness(0.6);
+  pointer-events: none;
+}

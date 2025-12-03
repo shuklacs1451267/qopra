@@ -1,0 +1,108 @@
+.register-page {
+  display: flex;
+  min-height: 100vh;
+  font-family: "Inter", sans-serif;
+}
+
+.register-left {
+  flex: 1;
+  background: linear-gradient(to bottom, #1b3358, #274690);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.register-logo {
+  width: 220px;
+  margin-bottom: 1rem;
+}
+
+.register-left h2 {
+  margin-top: 1rem;
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+.register-left p {
+  max-width: 280px;
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  opacity: 0.85;
+}
+
+.register-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f4f6f8;
+}
+
+.register-form {
+  width: 100%;
+  max-width: 500px;
+  background: white;
+  padding: 2.5rem 2.8rem;
+  border-radius: 14px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.12);
+}
+
+.register-form h2 {
+  color: #1b3358;
+  margin-bottom: 1.5rem;
+  font-size: 26px;
+}
+
+.register-form input,
+.register-form select {
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 14px;
+  border: 1px solid #e4e6e8;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+.register-btn {
+  width: 100%;
+  padding: 14px;
+  background: #1b3358;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.register-btn:hover {
+  background: #132c4b;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.success {
+  color: green;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 900px) {
+  .register-page {
+    flex-direction: column;
+  }
+
+  .register-left {
+    min-height: 200px;
+    padding: 1.5rem;
+  }
+}

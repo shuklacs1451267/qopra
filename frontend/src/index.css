@@ -1,0 +1,70 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow-x: hidden;
+  background: var(--background);
+  font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+:root {
+  --primary: #4FD1C5;          /* Soft teal */
+  --primary-light: #81E6D9;    /* Light aqua */
+  --secondary: #F6AD55;        /* Warm orange accent */
+  --background: #1A202C;       /* Dark slate gray */
+  --card-bg: rgba(255,255,255,0.05);  /* Slight glass effect */
+  --text-primary: #E2E8F0;     /* Soft off-white */
+  --text-secondary: rgba(226,232,240,0.7); /* Subtle text */
+
+  --success: #48BB78;
+  --error: #F56565;
+  --warning: #ECC94B;
+  --info: #63B3ED;
+
+  --btn-primary: #4FD1C5;      
+  --btn-primary-hover: linear-gradient(90deg, #4FD1C5, #81E6D9);
+  --btn-ghost: rgba(255,255,255,0.06);
+  --btn-ghost-hover: rgba(79,209,197,0.15);
+
+  --border-radius: 12px;
+  --shadow-light: 0 6px 16px rgba(79,209,197,0.2);
+  --transition-speed: 0.3s;
+}
+
+h1,h2,h3,h4,h5,h6,p,span,strong {
+  margin: 0;
+  padding: 0;
+  color: var(--text-primary);
+}
+
+a { text-decoration: none; color: inherit; }
+
+button {
+  border-radius: var(--border-radius);
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  cursor: pointer;
+  background-color: var(--btn-primary);
+  color: white;
+  transition: all var(--transition-speed);
+}
+
+button:hover {
+  background: var(--btn-primary-hover);
+}

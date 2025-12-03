@@ -1,0 +1,34 @@
+services:
+  backend:
+    build: .
+    container_name: backend
+    ports:
+      - "5000:5000"
+    env_file:
+      - .env
+    depends_on:
+      - mongo
+      - redis
+    command: node dist/server.js
+
+  worker:
+    build: .
+    container_name: worker
+    env_file:
+      - .env
+    depends_on:
+      - mongo
+      - redis
+    command: node dist/core/workers/worker.js
+
+  mongo:
+    image: mongo:7
+    container_name: mongo
+    ports:
+      - "27017:27017"
+
+  redis:
+    image: redis:7
+    container_name: redis
+    ports:
+      - "6379:6379"

@@ -1,0 +1,108 @@
+.create-campaign-page {
+  min-height: 100vh;
+  width: 100%;
+  padding: 80px 20px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  box-sizing: border-box;
+  background: linear-gradient(135deg, rgba(10,12,20,0.6), rgba(6,8,14,0.6));
+}
+
+.create-campaign-page h2 {
+  font-size: 32px;
+  font-weight: 700;
+  text-align: center;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 22px;
+  width: 100%;
+}
+
+.create-campaign-page label {
+  font-size: 14.5px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  display: block;
+  color: var(--text-secondary);
+}
+
+.create-campaign-page input,
+.create-campaign-page select,
+.create-campaign-page textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: var(--border-radius);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: var(--card-bg);
+  font-size: 15.5px;   
+  color: var(--text-primary);
+  box-sizing: border-box;
+  transition: all var(--transition-speed);
+}
+
+.create-campaign-page select {
+  cursor: pointer;
+}
+
+.create-campaign-page input:focus,
+.create-campaign-page select:focus,
+.create-campaign-page textarea:focus {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: var(--primary);
+  outline: none;
+}
+
+textarea {
+  min-height: 180px;
+  resize: none;
+}
+
+.submit-btn {
+  padding: 14px 32px;
+  background: var(--btn-primary);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  width: fit-content;
+  align-self: center;
+  transition: all 0.25s ease;
+  box-shadow: var(--shadow-light);
+}
+
+.submit-btn:hover {
+  background: var(--btn-primary-hover);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .create-campaign-page {
+    padding: 70px 16px 30px;
+  }
+  .create-campaign-page h2 {
+    font-size: 26px;
+  }
+  textarea {
+    min-height: 120px;
+  }
+}
+
+@media (max-width: 400px) {
+  .create-campaign-page {
+    padding: 60px 10px 25px;
+  }
+  .create-campaign-page input,
+  .create-campaign-page select,
+  .create-campaign-page textarea {
+    padding: 12px 12px;
+    font-size: 14px;
+  }
+}
