@@ -30,6 +30,7 @@ export const ENV = Object.freeze({
 
   REDIS_HOST: required("REDIS_HOST"),
   REDIS_PORT: requiredNumber("REDIS_PORT"),
+  REDIS_PASSWORD: required("REDIS_PASSWORD"),
 
   TWILIO_SID: required("TWILIO_SID"),
   TWILIO_AUTH: required("TWILIO_AUTH"),
