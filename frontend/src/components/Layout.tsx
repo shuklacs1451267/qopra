@@ -1,9 +1,13 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect, type ReactNode } from "react";
 import Navbar from "./Navbar";
 import Sidebar from "./Sidebar";
 import "../styles/Layout.css";
 
-const Layout = ({ children }) => {
+type LayoutProps = {
+  children: ReactNode;
+};
+
+const Layout: React.FC<LayoutProps> = ({ children }) => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -22,7 +26,9 @@ const Layout = ({ children }) => {
     <div className="layout">
       <Navbar toggleSidebar={() => setSidebarOpen(!sidebarOpen)} isMobile={isMobile} />
 
-      {isMobile && <Sidebar open={sidebarOpen} closeSidebar={() => setSidebarOpen(false)} />}
+      {isMobile && (
+        <Sidebar open={sidebarOpen} closeSidebar={() => setSidebarOpen(false)} />
+      )}
 
       {sidebarOpen && isMobile && (
         <div className="overlay" onClick={() => setSidebarOpen(false)} />
