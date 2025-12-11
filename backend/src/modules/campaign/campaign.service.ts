@@ -1,6 +1,7 @@
 import { CampaignModel } from "./campaign.model";
 import { NotFound } from "../../core/errors";
 import { logger } from "../../config/logger";
+import moment from "moment-timezone";
 
 export const CampaignService = {
   
@@ -8,8 +9,19 @@ export const CampaignService = {
    * @pram Create a new campaign for a user
    */
   async create(userId: string, data: Partial<any>) {
-    const campaign = await CampaignModel.create({ ...data, user: userId });
-    if (data.scheduledAt) data.scheduledAt = new Date(data.scheduledAt);
+    let scheduledAtUTC: Date | null = null;
+    if (data.scheduledAt) {
+      scheduledAtUTC = moment
+        .tz(data.scheduledAt, "YYYY-MM-DDTHH:mm", "Asia/Kolkata")
+        .utc()
+        .toDate();
+    }
+
+    const campaign = await CampaignModel.create({ 
+      ...data, 
+      user: userId,
+      scheduledAt: scheduledAtUTC || null,
+    });
 
     logger.info(`[CampaignService] Created campaign | UserID: ${userId} | CampaignID: ${campaign._id}`);
     return campaign;
@@ -49,6 +61,14 @@ export const CampaignService = {
    * @throws NotFound if campaign does not exist
    */
   async update(id: string, data: Partial<any>) {
+    // Convert scheduledAt to UTC if updated
+    if (data.scheduledAt) {
+      data.scheduledAt = moment
+        .tz(data.scheduledAt, "YYYY-MM-DDTHH:mm", "Asia/Kolkata")
+        .utc()
+        .toDate();
+    }
+
     const campaign = await CampaignModel.findByIdAndUpdate(id, data, { new: true });
     if (!campaign) throw new NotFound("Campaign not found");
     logger.info(`[CampaignService] Updated campaign | CampaignID: ${id}`);
