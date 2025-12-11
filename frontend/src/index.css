@@ -5,12 +5,23 @@
   padding: 0;
   box-sizing: border-box;
 }
-/* Apply to all sections that you scroll to */
 #hero,
 #services,
 #demo,
 #contact {
-  scroll-margin-top: 60px; /* height of your fixed navbar */
+  scroll-margin-top: 70px;
+}
+
+@media (max-width: 900px) {
+  #hero,
+  #services,
+  #demo,
+  #contact {
+    scroll-margin-top: 60px;
+  }
+}
+html {
+  scroll-behavior: smooth;
 }
 
 html, body {

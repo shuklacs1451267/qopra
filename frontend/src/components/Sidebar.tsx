@@ -19,29 +19,11 @@ const Sidebar: React.FC<SidebarProps> = ({ open, closeSidebar }) => {
 
       <aside className={`sidebar ${open ? "open" : ""}`}>
         <ul>
-          <li>
-            <button className="sidebar-btn" onClick={() => { closeSidebar(); scrollTo("hero"); }}>
-              Home
-            </button>
-          </li>
-          <li>
-            <button className="sidebar-btn" onClick={() => { closeSidebar(); scrollTo("services"); }}>
-              Services
-            </button>
-          </li>
-          <li>
-            <button className="sidebar-btn" onClick={() => { closeSidebar(); scrollTo("demo"); }}>
-              Platform Demo
-            </button>
-          </li>
-          <li>
-            <button className="sidebar-btn" onClick={() => { closeSidebar(); scrollTo("contact"); }}>
-              Contact
-            </button>
-          </li>
-          <li>
-            <Link to="/login" onClick={closeSidebar}>Login</Link>
-          </li>
+          <li><button className="sidebar-btn" onClick={() => { closeSidebar(); scrollTo("hero"); }}>Home</button></li>
+          <li><button className="sidebar-btn" onClick={() => { closeSidebar(); scrollTo("services"); }}>Services</button></li>
+          <li><button className="sidebar-btn" onClick={() => { closeSidebar(); scrollTo("demo"); }}>Platform Demo</button></li>
+          <li><button className="sidebar-btn" onClick={() => { closeSidebar(); scrollTo("contact"); }}>Contact</button></li>
+          <li><Link to="/login" onClick={closeSidebar}>Login</Link></li>
         </ul>
       </aside>
     </>
