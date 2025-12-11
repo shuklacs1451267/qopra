@@ -19,45 +19,26 @@ const Sidebar: React.FC<SidebarProps> = ({ open, closeSidebar }) => {
 
       <aside className={`sidebar ${open ? "open" : ""}`}>
         <ul>
-
-          {/* HOME PAGE SCROLL BUTTONS */}
           <li>
-            <button
-              className="sidebar-btn"
-              onClick={() => { closeSidebar(); scrollTo("hero"); }}
-            >
+            <button className="sidebar-btn" onClick={() => { closeSidebar(); scrollTo("hero"); }}>
               Home
             </button>
           </li>
-
           <li>
-            <button
-              className="sidebar-btn"
-              onClick={() => { closeSidebar(); scrollTo("services"); }}
-            >
+            <button className="sidebar-btn" onClick={() => { closeSidebar(); scrollTo("services"); }}>
               Services
             </button>
           </li>
-
           <li>
-            <button
-              className="sidebar-btn"
-              onClick={() => { closeSidebar(); scrollTo("demo"); }}
-            >
+            <button className="sidebar-btn" onClick={() => { closeSidebar(); scrollTo("demo"); }}>
               Platform Demo
             </button>
           </li>
-
           <li>
-            <button
-              className="sidebar-btn"
-              onClick={() => { closeSidebar(); scrollTo("contact"); }}
-            >
+            <button className="sidebar-btn" onClick={() => { closeSidebar(); scrollTo("contact"); }}>
               Contact
             </button>
           </li>
-
-          {/* REAL ROUTES */}
           <li>
             <Link to="/login" onClick={closeSidebar}>Login</Link>
           </li>

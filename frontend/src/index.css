@@ -5,6 +5,13 @@
   padding: 0;
   box-sizing: border-box;
 }
+/* Apply to all sections that you scroll to */
+#hero,
+#services,
+#demo,
+#contact {
+  scroll-margin-top: 60px; /* height of your fixed navbar */
+}
 
 html, body {
   width: 100%;
