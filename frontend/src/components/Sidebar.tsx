@@ -8,6 +8,11 @@ type SidebarProps = {
 };
 
 const Sidebar: React.FC<SidebarProps> = ({ open, closeSidebar }) => {
+  const scrollTo = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <>
       {open && <div className="sidebar-overlay" onClick={closeSidebar}></div>}
@@ -17,31 +22,45 @@ const Sidebar: React.FC<SidebarProps> = ({ open, closeSidebar }) => {
 
           {/* HOME PAGE SCROLL BUTTONS */}
           <li>
-            <button className="sidebar-btn" onClick={() => { closeSidebar(); document.getElementById("hero")?.scrollIntoView({ behavior: "smooth" }); }}>
+            <button
+              className="sidebar-btn"
+              onClick={() => { closeSidebar(); scrollTo("hero"); }}
+            >
               Home
             </button>
           </li>
 
           <li>
-            <button className="sidebar-btn" onClick={() => { closeSidebar(); document.getElementById("services")?.scrollIntoView({ behavior: "smooth" }); }}>
+            <button
+              className="sidebar-btn"
+              onClick={() => { closeSidebar(); scrollTo("services"); }}
+            >
               Services
             </button>
           </li>
 
           <li>
-            <button className="sidebar-btn" onClick={() => { closeSidebar(); document.getElementById("demo")?.scrollIntoView({ behavior: "smooth" }); }}>
+            <button
+              className="sidebar-btn"
+              onClick={() => { closeSidebar(); scrollTo("demo"); }}
+            >
               Platform Demo
             </button>
           </li>
 
           <li>
-            <button className="sidebar-btn" onClick={() => { closeSidebar(); document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" }); }}>
+            <button
+              className="sidebar-btn"
+              onClick={() => { closeSidebar(); scrollTo("contact"); }}
+            >
               Contact
             </button>
           </li>
 
           {/* REAL ROUTES */}
-          <li><Link to="/login" onClick={closeSidebar}>Login</Link></li>
+          <li>
+            <Link to="/login" onClick={closeSidebar}>Login</Link>
+          </li>
         </ul>
       </aside>
     </>

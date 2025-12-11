@@ -1,6 +1,6 @@
 .sidebar {
   position: fixed;
-  top: 70px;
+  top: 60px;
   left: -250px;
   width: 250px;
   height: calc(100vh - 50px);
@@ -13,64 +13,39 @@
   border-right: 1px solid rgba(255, 255, 255, 0.15);
   font-family: var(--font-family);
 }
+
+.sidebar.open { left: 0; }
+
 .sidebar-btn {
-  background: none !important;
-  border: none;
+  all: unset;
   cursor: pointer;
   font-size: 17px;
   font-weight: 500;
-  padding: 0;
   color: var(--text-primary);
-  transition: all var(--transition-speed);
-}
-
-.sidebar-btn:hover {
-  color: var(--primary);
-}
-
-.sidebar.open {
-  left: 0;
-}
-
-.sidebar-profile {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 15px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.sidebar-profile-img {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid rgba(255, 255, 255, 0.3);
-}
-
-.sidebar ul {
-  list-style: none;
-  padding: 0 20px;
+  display: block;
   width: 100%;
+  padding: 18px 25px;
+  transition: 0.25s;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.sidebar li {
-  padding: 18px 25px;
-  font-size: 18px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-  transition: all var(--transition-speed);
+.sidebar-btn:hover { color: var(--primary); }
+
+.sidebar-btn:focus,
+.sidebar-btn:active {
+  outline: none !important;
+  background: none !important;
+  box-shadow: none !important;
 }
 
 .sidebar li a {
   color: var(--text-primary);
   text-decoration: none;
   display: block;
+  padding: 18px 25px;
 }
 
-.sidebar li:hover {
-  background-color: rgba(255, 255, 255, 0.18);
-  color: var(--primary);
-}
+.sidebar li:hover { background-color: rgba(255, 255, 255, 0.18); }
 
 .sidebar-overlay {
   position: fixed;
@@ -81,34 +56,4 @@
   background: rgba(0,0,0,0.4);
   backdrop-filter: blur(3px);
   z-index: 1250;
-  display: none;
-}
-
-.sidebar.open + .sidebar-overlay {
-  display: block;
-}
-
-@media (max-width: 1024px) {
-  .sidebar {
-    width: 220px;
-  }
-  .sidebar li {
-    font-size: 16px;
-    padding: 16px 20px;
-  }
-}
-
-@media (max-width: 640px) {
-  .sidebar {
-    top: 60px;
-    width: 200px;
-  }
-  .sidebar-profile-img {
-    width: 35px;
-    height: 35px;
-  }
-  .sidebar li {
-    font-size: 15px;
-    padding: 14px 18px;
-  }
 }
