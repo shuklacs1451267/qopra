@@ -176,7 +176,7 @@ export default function Home() {
         <p className="contact-sub">Our support team is available 24/7 to assist you with any query.</p>
         <div className="contact-card">
           <h3>📞 +91 9014465414</h3>
-          <h3>📧 support@qopra.com</h3>
+          <h3>📧 info@socialstech.com </h3>
         </div>
         {/* <Link to="/register" className="btn-primary big-contact-btn">
           Get Started Today
