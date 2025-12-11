@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "../styles/Navbar.css";
 
 type NavbarProps = {
@@ -8,6 +7,12 @@ type NavbarProps = {
 };
 
 const Navbar: React.FC<NavbarProps> = ({ toggleSidebar, isMobile }) => {
+
+  const scrollTo = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <nav className="navbar">
       {isMobile && (
@@ -20,12 +25,13 @@ const Navbar: React.FC<NavbarProps> = ({ toggleSidebar, isMobile }) => {
 
       {!isMobile && (
         <ul className="nav-links">
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/">About</Link></li>
-          <li><Link to="/">Features</Link></li>
-          <li><Link to="/">Contact</Link></li>
-          <li><Link to="/login" className="login-btn">Login</Link></li>
-        </ul>
+  <li><button className="nav-btn" onClick={() => scrollTo("hero")}>Home</button></li>
+  <li><button className="nav-btn" onClick={() => scrollTo("services")}>Services</button></li>
+  <li><button className="nav-btn" onClick={() => scrollTo("demo")}>Platform Demo</button></li>
+  <li><button className="nav-btn" onClick={() => scrollTo("contact")}>Contact</button></li>
+
+  <li><a href="/login" className="login-btn">Login</a></li>
+</ul>
       )}
     </nav>
   );

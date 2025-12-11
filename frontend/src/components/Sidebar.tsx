@@ -14,10 +14,33 @@ const Sidebar: React.FC<SidebarProps> = ({ open, closeSidebar }) => {
 
       <aside className={`sidebar ${open ? "open" : ""}`}>
         <ul>
-          <li><Link to="/" onClick={closeSidebar}>Home</Link></li>
-          <li><Link to="/about" onClick={closeSidebar}>About</Link></li>
-          <li><Link to="/strategy" onClick={closeSidebar}>Strategy</Link></li>
-          <li><Link to="/contact" onClick={closeSidebar}>Contact</Link></li>
+
+          {/* HOME PAGE SCROLL BUTTONS */}
+          <li>
+            <button className="sidebar-btn" onClick={() => { closeSidebar(); document.getElementById("hero")?.scrollIntoView({ behavior: "smooth" }); }}>
+              Home
+            </button>
+          </li>
+
+          <li>
+            <button className="sidebar-btn" onClick={() => { closeSidebar(); document.getElementById("services")?.scrollIntoView({ behavior: "smooth" }); }}>
+              Services
+            </button>
+          </li>
+
+          <li>
+            <button className="sidebar-btn" onClick={() => { closeSidebar(); document.getElementById("demo")?.scrollIntoView({ behavior: "smooth" }); }}>
+              Platform Demo
+            </button>
+          </li>
+
+          <li>
+            <button className="sidebar-btn" onClick={() => { closeSidebar(); document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" }); }}>
+              Contact
+            </button>
+          </li>
+
+          {/* REAL ROUTES */}
           <li><Link to="/login" onClick={closeSidebar}>Login</Link></li>
         </ul>
       </aside>

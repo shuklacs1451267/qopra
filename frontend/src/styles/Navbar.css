@@ -22,6 +22,20 @@
   letter-spacing: 1px;
   color: var(--primary);
 }
+.nav-btn {
+  background: none !important;
+  border: none;
+  cursor: pointer;
+  font-size: 17px;
+  font-weight: 500;
+  padding: 0;
+  color: var(--text-primary);
+  transition: all var(--transition-speed);
+}
+
+.nav-btn:hover {
+  color: var(--primary);
+}
 
 .nav-links {
   list-style: none;

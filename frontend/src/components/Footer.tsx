@@ -8,9 +8,9 @@ export default function Footer() {
 
         <div className="footer-left">
           <h3>Qopra</h3>
-          <p>
+          {/* <p>
             Your all-in-one platform for WhatsApp, SMS & Email marketing. Automate campaigns, track performance, and grow your business effortlessly.
-          </p>
+          </p> */}
         </div>
 
         <div className="footer-contact">
