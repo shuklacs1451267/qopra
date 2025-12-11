@@ -13,9 +13,10 @@
   border-right: 1px solid rgba(255, 255, 255, 0.15);
   font-family: var(--font-family);
 }
-
-.sidebar.open { left: 0; }
-
+.sidebar-btn:hover { color: var(--primary); }
+.sidebar.open {
+  left: 0;
+}
 .sidebar-btn {
   all: unset;
   cursor: pointer;
@@ -28,14 +29,40 @@
   transition: 0.25s;
   -webkit-tap-highlight-color: transparent;
 }
+/* Profile Section Fixed at Top */
+.sidebar-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  position: sticky;
+  top: 0;
+  background: rgba(31, 41, 55, 0.75);
+  z-index: 1350;
+}
 
-.sidebar-btn:hover { color: var(--primary); }
+.sidebar-profile-img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+  border: 2px solid var(--primary);
+}
 
-.sidebar-btn:focus,
-.sidebar-btn:active {
-  outline: none !important;
-  background: none !important;
-  box-shadow: none !important;
+.sidebar-profile span {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* Sidebar links */
+.sidebar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex: 1; /* Rest of the space for links and scroll */
+  overflow-y: auto;
 }
 
 .sidebar li a {
@@ -57,3 +84,4 @@
   backdrop-filter: blur(3px);
   z-index: 1250;
 }
+

@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import "../../../styles/userCss/profile/ClientProfile.css";
+import api from "../../../api/adminApi";
 import {
   FaBuilding,
   FaMapMarkerAlt,
@@ -8,7 +9,6 @@ import {
   FaFileImage,
   FaMobileAlt
 } from "react-icons/fa";
-import axios from "axios";
 
 interface FileData {
   name: string;
@@ -52,7 +52,7 @@ const ClientProfile: React.FC = () => {
   const fetchProfile = async () => {
     try {
       const token = localStorage.getItem("token");
-      const res = await axios.get("http://localhost:5000/api/users/me", {
+      const res = await api.get("/users/me", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setProfile(res.data.data);
@@ -76,8 +76,8 @@ const ClientProfile: React.FC = () => {
     if (!profile) return;
     try {
       const token = localStorage.getItem("token");
-      const res = await axios.post(
-        "http://localhost:5000/api/users/twilio/send-code",
+      const res = await api.post(
+        "/users/twilio/send-code",
         { twilioNumber: profile.twilioNumber },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -93,8 +93,8 @@ const ClientProfile: React.FC = () => {
     try {
       setVerifying(true);
       const token = localStorage.getItem("token");
-      const res = await axios.post(
-        "http://localhost:5000/api/users/twilio/verify-code",
+      const res = await api.post(
+        "/users/twilio/verify-code",
         { otp },
         { headers: { Authorization: `Bearer ${token}` } }
       );

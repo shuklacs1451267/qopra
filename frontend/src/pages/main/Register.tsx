@@ -1,9 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
 import "../../styles/register.css";
 import Footer from "../../components/Footer";
-
+import api from "../../api/adminApi";
 export default function Register() {
   const navigate = useNavigate();
 
@@ -29,7 +28,7 @@ export default function Register() {
     setSuccess("");
 
     try {
-      const res = await axios.post("http://localhost:5000/api/auth/register", formData);
+      const res = await api.post("/auth/register", formData);
       if (res.data.success) {
         setSuccess("Registration successful! Redirecting to login...");
         setTimeout(() => navigate("/login"), 2000);

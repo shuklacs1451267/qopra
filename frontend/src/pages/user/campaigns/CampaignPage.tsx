@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "../../../styles/userCss/profile/CampaignPage.css";
+import api from "../../../api/adminApi";
 
 interface Campaign {
   _id: string;
@@ -29,7 +29,7 @@ const CampaignPage: React.FC = () => {
   const fetchCampaigns = async () => {
     try {
       const token = localStorage.getItem("token");
-      const res = await axios.get("http://localhost:5000/api/campaigns/me", {
+      const res = await api.get("/campaigns/me", {
         headers: { Authorization: `Bearer ${token}` },
       });
 

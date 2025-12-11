@@ -17,7 +17,17 @@ startCronJobs();
 // @security: Set HTTP headers to protect against well known web vulnerabilities (e.g., XSS, clickjacking)
 app.use(helmet());
 
-app.use(cors({ origin: true, credentials: true }));
+app.use(
+  cors({
+    origin: (origin, callback) => {
+      callback(null, origin || "*");
+    },
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+  })
+);
+app.options("*", cors());
 
 // @security: Prevent NoSQL injection attacks by removing $ and . from request data
 app.use(mongoSanitize());

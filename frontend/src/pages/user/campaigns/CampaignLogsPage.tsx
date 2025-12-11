@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import axios from "axios";
 import "../../../styles/userCss/profile/CampaignLogsPage.css";
+import api from "../../../api/adminApi";
 
 interface Log {
   _id: string;
@@ -27,8 +27,8 @@ const CampaignLogs: React.FC = () => {
   const fetchLogs = async () => {
     try {
       const token = localStorage.getItem("token");
-      const res = await axios.get(
-        `http://localhost:5000/api/logs/campaign/${id}`,
+      const res = await api.get(
+        `/logs/campaign/${id}`,
         { headers: { Authorization: `Bearer ${token}` } }
       );
       setLogs(res.data.data);
