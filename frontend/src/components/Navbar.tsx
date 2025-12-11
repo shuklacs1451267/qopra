@@ -1,5 +1,6 @@
 import React from "react";
 import "../styles/Navbar.css";
+import { Link } from "react-router-dom";
 
 type NavbarProps = {
   toggleSidebar: () => void;
@@ -26,7 +27,7 @@ const Navbar: React.FC<NavbarProps> = ({ toggleSidebar, isMobile }) => {
           <li><button className="nav-btn" onClick={() => scrollTo("services")}>Services</button></li>
           <li><button className="nav-btn" onClick={() => scrollTo("demo")}>Platform Demo</button></li>
           <li><button className="nav-btn" onClick={() => scrollTo("contact")}>Contact</button></li>
-          <li><a href="/login" className="login-btn">Login</a></li>
+          <li><Link to="/login" className="login-btn">Login</Link></li>
         </ul>
       )}
     </nav>
