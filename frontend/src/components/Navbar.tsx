@@ -25,7 +25,7 @@ const Navbar: React.FC<NavbarProps> = ({ toggleSidebar, isMobile }) => {
         <ul className="nav-links">
           <li><button className="nav-btn" onClick={() => scrollTo("hero")}>Home</button></li>
           <li><button className="nav-btn" onClick={() => scrollTo("services")}>Services</button></li>
-          <li><button className="nav-btn" onClick={() => scrollTo("demo")}>Platform Demo</button></li>
+          <li><button className="nav-btn" onClick={() => scrollTo("demo")}>Platform</button></li>
           <li><button className="nav-btn" onClick={() => scrollTo("contact")}>Contact</button></li>
           <li><Link to="/login" className="login-btn">Login</Link></li>
         </ul>
