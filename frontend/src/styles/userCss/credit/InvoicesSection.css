@@ -1,0 +1,133 @@
+.inv-card {
+  padding: 20px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.03);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  overflow-x: auto;
+  width: 100%;
+  min-width: 300px;
+}
+
+.inv-title {
+  font-size: 1.25em;
+  color: #FFFFFF;
+  margin-bottom: 18px;
+  font-weight: 600;
+}
+
+.inv-filter-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.inv-filter-row label {
+  color: #E5E7EB;
+  font-size: 0.95em;
+}
+
+.inv-filter-row select {
+  padding: 7px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.05);
+  color: #E5E7EB;
+  font-size: 0.95em;
+}
+
+.inv-filter-row .inv-btn {
+  background: #4FD1C5;
+  color: #021018;
+  padding: 7px 14px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: 500;
+}
+
+.inv-filter-row .inv-btn:hover {
+  background: #38B2AC;
+}
+
+.inv-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.inv-row {
+  display: flex;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.inv-item {
+  flex: 1 1 100px;
+  color: #E5E7EB;
+  font-size: 0.95em;
+}
+
+.inv-cost {
+  font-weight: bold;
+  color: #4FD1C5;
+}
+
+.inv-download-btn {
+  background: transparent;
+  color: #4FD1C5;
+  border: 1px solid #4FD1C5;
+  border-radius: 10px;
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: 0.3s;
+  flex-shrink: 0;
+}
+
+.inv-download-btn:hover {
+  background: rgba(79,209,197,0.1);
+}
+
+@media (max-width: 900px) {
+  .inv-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 14px 0;
+  }
+
+  .inv-item {
+    flex: 1 1 100%;
+  }
+
+  .inv-download-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .inv-title {
+    font-size: 1.1em;
+  }
+
+  .inv-filter-row select,
+  .inv-filter-row .inv-btn {
+    width: 100%;
+  }
+
+  .inv-filter-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .inv-card {
+    padding: 16px;
+  }
+}

@@ -1,0 +1,104 @@
+.cc-card {
+  flex: 1;
+  min-width: 280px;
+  background: rgba(255,255,255,0.03);
+  padding: 20px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(6px);
+}
+
+.cc-title {
+  font-size: 1.2em;
+  color: #FFFFFF;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.cc-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  gap: 12px;
+}
+
+.cc-row span {
+  color: #E5E7EB;
+  flex: 1;
+  font-size: 0.95em;
+}
+
+.cc-row input,
+.cc-row select {
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.04);
+  color: #E5E7EB;
+  width: 45%;
+  text-align: right;
+  font-size: 0.95em;
+}
+
+.cc-row select {
+  appearance: none;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="%23E5E7EB"><polygon points="0,0 10,0 5,10"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 32px;
+}
+
+.cc-estimate {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  margin-top: 14px;
+  padding-top: 12px;
+  font-weight: 600;
+  color: #FFFFFF;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cc-value {
+  color: #FFFFFF;
+  font-size: 1.1em;
+}
+
+@media (max-width: 900px) {
+  .cc-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .cc-row input,
+  .cc-row select {
+    width: 100%;
+    text-align: left;
+  }
+
+  .cc-estimate {
+    flex-direction: column;
+    gap: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cc-card {
+    padding: 16px;
+  }
+
+  .cc-title {
+    font-size: 1.1em;
+  }
+
+  .cc-row span {
+    font-size: 0.9em;
+  }
+
+  .cc-row input,
+  .cc-row select {
+    font-size: 0.9em;
+    padding: 9px 12px;
+  }
+}

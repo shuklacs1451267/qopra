@@ -1,0 +1,156 @@
+.lca-card {
+  flex: 1;
+  min-width: 280px;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.03);
+}
+
+.lca-title {
+  color: #FFFFFF;
+  font-size: 1.2em;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+.lca-toggle-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  color: #E5E7EB;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.lca-text {
+  color: rgba(229,231,235,0.75);
+  margin-bottom: 12px;
+  font-size: 0.95em;
+}
+
+.lca-settings {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.lca-input {
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.05);
+  color: #E5E7EB;
+  width: 120px;
+  font-size: 0.95em;
+}
+
+.lca-btn {
+  flex: 1;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: #4FD1C5;
+  color: #1A202C;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 0.95em;
+  font-weight: 500;
+}
+
+.lca-btn:hover {
+  background: #38B2AC;
+}
+
+.lca-saved-cards {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.lca-card-item {
+  padding: 7px 14px;
+  border-radius: 10px;
+  font-size: 0.88em;
+  cursor: pointer;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: #1F2937;
+  color: #E5E7EB;
+}
+
+.lca-card-item.farwd {
+  color: #4FD1C5;
+  border-color: #4FD1C5;
+}
+
+.lca-card-item.manage {
+  color: #FFFFFF;
+  border-color: #E5E7EB;
+}
+
+.lca-switch {
+  position: relative;
+  display: inline-block;
+  width: 42px;
+  height: 22px;
+}
+
+.lca-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.lca-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255,255,255,0.3);
+  transition: 0.4s;
+  border-radius: 20px;
+}
+
+.lca-slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+.lca-switch input:checked + .lca-slider {
+  background-color: #4FD1C5;
+}
+
+.lca-switch input:checked + .lca-slider:before {
+  transform: translateX(20px);
+}
+
+@media (max-width: 900px) {
+  .lca-settings {
+    flex-direction: column;
+  }
+
+  .lca-input {
+    width: 100%;
+  }
+
+  .lca-btn {
+    width: 100%;
+  }
+
+  .lca-toggle-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+}

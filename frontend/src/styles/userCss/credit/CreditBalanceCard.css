@@ -1,0 +1,131 @@
+.cbc-card {
+  flex: 2;
+  min-width: 300px;
+  padding: 22px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.03);
+  backdrop-filter: blur(6px);
+}
+
+.cbc-title {
+  font-size: 1.25em;
+  color: #FFFFFF;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.cbc-balance {
+  margin-bottom: 18px;
+}
+
+.cbc-amount {
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 1.6em;
+}
+
+.cbc-currency {
+  color: #E5E7EB;
+  margin-left: 5px;
+}
+
+.cbc-actions {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.cbc-btn-primary,
+.cbc-btn-secondary {
+  flex: 1;
+  min-width: 140px;
+  padding: 10px 16px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 0.95em;
+}
+
+.cbc-btn-primary {
+  background: rgba(79,209,197,0.85);
+  color: #021028;
+  border: none;
+}
+
+.cbc-btn-primary:hover {
+  background: rgba(79,209,197,1);
+}
+
+.cbc-btn-secondary {
+  background: transparent;
+  color: #E5E7EB;
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+.cbc-btn-secondary:hover {
+  background: rgba(229,231,235,0.12);
+}
+
+.cbc-cards-preview {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.cbc-card-item {
+  padding: 6px 14px;
+  border-radius: 10px;
+  font-size: 0.9em;
+  cursor: pointer;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.04);
+  color: #E5E7EB;
+}
+
+.cbc-card-item.add-new {
+  background: transparent;
+  color: rgba(79,209,197,0.9);
+  border: 1px solid rgba(79,209,197,0.9);
+}
+
+.cbc-card-item.manage {
+  color: #FFFFFF;
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+@media (max-width: 900px) {
+  .cbc-card {
+    min-width: 100%;
+  }
+
+  .cbc-actions {
+    flex-direction: column;
+  }
+
+  .cbc-btn-primary,
+  .cbc-btn-secondary {
+    width: 100%;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+  .cbc-card {
+    padding: 18px;
+  }
+
+  .cbc-title {
+    font-size: 1.15em;
+  }
+
+  .cbc-amount {
+    font-size: 1.45em;
+  }
+
+  .cbc-card-item {
+    font-size: 0.85em;
+    padding: 5px 10px;
+  }
+}

@@ -1,0 +1,92 @@
+.cuh-card {
+  padding: 20px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(6px);
+  overflow-x: auto;
+  width: 100%;
+}
+
+.cuh-title {
+  color: #63B3ED;
+  font-size: 1.25em;
+  margin-bottom: 18px;
+  font-weight: 600;
+}
+
+.cuh-table-wrapper {
+  overflow-x: auto;
+  width: 100%;
+}
+
+.cuh-table {
+  width: 100%;
+  min-width: 700px;
+  border-collapse: collapse;
+}
+
+.cuh-table th,
+.cuh-table td {
+  padding: 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  color: #E2E8F0;
+  text-align: left;
+  font-size: 0.92em;
+}
+
+.cuh-table thead th {
+  color: #A0AEC0;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 0.88em;
+}
+
+.cuh-table tbody tr:hover {
+  background: rgba(79,209,197,0.1);
+}
+
+.cuh-table td:nth-child(5):contains("(Unlimited Tier)") {
+  color: #FFD700;
+  font-weight: 600;
+}
+
+.cuh-link {
+  margin-top: 15px;
+  display: inline-block;
+  color: #4FD1C5;
+  text-decoration: none;
+  font-size: 0.9em;
+}
+
+.cuh-link:hover {
+  text-decoration: underline;
+}
+
+/* ----------- RESPONSIVE FIXES ----------- */
+@media (max-width: 900px) {
+  .cuh-table th,
+  .cuh-table td {
+    font-size: 0.85em;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .cuh-title {
+    font-size: 1.1em;
+  }
+
+  .cuh-table {
+    min-width: 550px; /* Better mobile scroll */
+  }
+
+  .cuh-table th,
+  .cuh-table td {
+    padding: 8px;
+  }
+
+  .cuh-card {
+    padding: 16px;
+  }
+}

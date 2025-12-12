@@ -14,6 +14,7 @@ import CreateCampaign from "./pages/user/campaigns/CreateCampaign";
 import ClientProfile from "./pages/user/profile/ClientProfile";
 import CampaignPage from "./pages/user/campaigns/CampaignPage";
 import CampaignLogsPage from "./pages/user/campaigns/CampaignLogsPage";
+import CreditDashboard from "./pages/user/credit/CreditDashboard";
 export default function App() {
   const { userName, userImage } = useContext(AuthContext);
 
@@ -85,6 +86,17 @@ export default function App() {
           <ProtectedRoute role="client">
             <ClientLayout userName={userName || ""} userImage={userImage || ""}>
               <ClientProfile />
+            </ClientLayout>
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path="/credits"
+        element={
+          <ProtectedRoute role="client">
+            <ClientLayout userName={userName || ""} userImage={userImage || ""}>
+              <CreditDashboard />
             </ClientLayout>
           </ProtectedRoute>
         }
