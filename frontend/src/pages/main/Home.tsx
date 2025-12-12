@@ -150,8 +150,8 @@ export default function Home() {
 
       {/* SLIDER */}
       <section id="demo" className="demo-slider">
-        <h2>Platform Demo</h2>
-        <p className="demo-sub">Preview our clean and fast dashboard.</p>
+        <h2>Platform</h2>
+        <p className="demo-sub">Preview our clean and fast Platform.</p>
         <div className="slider-container">
           <button className="arrow left" onClick={prev}>❮</button>
           <img src={screenshots[current]} className="slide-image" alt="Demo screenshot" />
