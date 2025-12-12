@@ -20,7 +20,7 @@ export const CampaignService = {
     const campaign = await CampaignModel.create({ 
       ...data, 
       user: userId,
-      scheduledAt: scheduledAtUTC || null,
+      scheduledAt: scheduledAtUTC ?? undefined,
     });
 
     logger.info(`[CampaignService] Created campaign | UserID: ${userId} | CampaignID: ${campaign._id}`);
