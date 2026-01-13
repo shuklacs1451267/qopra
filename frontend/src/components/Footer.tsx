@@ -16,7 +16,7 @@ export default function Footer() {
         <div className="footer-contact">
           <h4>Contact Us</h4>
           <p>Email: info@socialstech.com </p>
-          <p>Phone: +91 90144 65414</p>
+          <p>Phone: +91 8726361818</p>
           <p>Address: Hyderabad, India</p>
         </div>
 
