@@ -175,7 +175,7 @@ export default function Home() {
         <h2>Need Help or Custom Pricing?</h2>
         <p className="contact-sub">Our support team is available 24/7 to assist you with any query.</p>
         <div className="contact-card">
-          <h3>📞 +91 9014465414</h3>
+          <h3>📞 +91 8726361818</h3>
           <h3>📧 info@socialstech.com </h3>
         </div>
         {/* <Link to="/register" className="btn-primary big-contact-btn">
