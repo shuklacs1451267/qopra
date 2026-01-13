@@ -17,7 +17,8 @@ export default function Footer() {
           <h4>Contact Us</h4>
           <p>Email: info@socialstech.com </p>
           <p>Phone: +91 8726361818</p>
-          <p>Address: Hyderabad, India</p>
+          <p>Address: 243/2, Ground Floor, Old No. 7 KH No.505,
+Gali No-1 Chanderlok Colony, Delhi - 110093, India</p>
         </div>
 
         {/* Social Links */}
