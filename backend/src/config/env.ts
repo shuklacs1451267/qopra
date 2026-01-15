@@ -42,4 +42,7 @@ export const ENV = Object.freeze({
   EMAIL_USER: required("EMAIL_USER"),
   EMAIL_PASS: required("EMAIL_PASS"),
   EMAIL_FROM: required("EMAIL_FROM"),
+
+  RAZORPAY_KEY: required("RAZORPAY_KEY"),
+  RAZORPAY_SECRET: required("RAZORPAY_SECRET"),
 });

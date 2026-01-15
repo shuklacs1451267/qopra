@@ -10,6 +10,7 @@ router.use("/auth", authRoutes);
 router.use("/users", userRoutes);
 router.use("/campaigns", campaignsRoutes);
 router.use("/logs", logRoutes);
+router.use("/order", logRoutes);
 
 // health
 router.get("/health", (_req, res) => res.json({ ok: true, service: "backend" }));
